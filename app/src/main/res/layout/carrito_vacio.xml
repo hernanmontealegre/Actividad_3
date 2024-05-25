@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:padding="6dp"
+        android:background="@color/color_principal"
+        android:elevation="8dp">
+        <!-- Menú -->
+        <ImageView
+            android:id="@+id/imageViewLogo"
+            android:layout_width="20dp"
+            android:layout_height="29dp"
+            android:layout_weight="1"
+            android:elevation="2dp"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic" />
+
+        <!-- Campo para búsqueda -->
+        <EditText
+            android:id="@+id/editTextSearch"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:background="@color/blanco"
+            android:hint="Buscar "
+            android:padding="16dp"
+            android:textColor="@color/black"
+            android:layout_width="0dp"/>
+
+        <!-- Carrito -->
+        <ImageView
+            android:id="@+id/imageViewCart"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitEnd"
+            android:src="@drawable/carrito"
+            android:elevation="2dp" />
+    </LinearLayout>
+
+    <!-- Título carrito vacío-->
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tu carrito no tiene Productos"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@id/layoutTop"
+        android:gravity="center"
+        android:padding="16dp"/>
+
+</RelativeLayout>

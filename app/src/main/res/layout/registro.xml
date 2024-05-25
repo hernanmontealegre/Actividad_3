@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Parte superior: Logo - Nombre de la aplicación - Carrito de compras -->
+    <LinearLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="6dp"
+        android:background="@color/color_principal"
+        android:elevation="8dp">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/imageViewLogo"
+            android:layout_width="20dp"
+            android:layout_height="29dp"
+            android:layout_weight="1"
+            android:elevation="2dp"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic" />
+
+        <!-- Campo de búsqueda -->
+        <EditText
+            android:id="@+id/editTextSearch"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:background="@color/blanco"
+            android:hint="Buscar "
+            android:padding="16dp"
+            android:textColor="@color/black"
+            android:layout_width="0dp"/>
+
+        <!-- Logo de carrito de compras -->
+        <ImageView
+            android:id="@+id/imageViewCart"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitEnd"
+            android:src="@drawable/carrito"
+            android:elevation="2dp" />
+
+    </LinearLayout>
+
+    <!-- Sección de inicio de sesión con usuario y contraseña -->
+    <LinearLayout
+        android:id="@+id/layoutLoginCredentials"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutTop"
+        android:padding="16dp"
+        android:visibility="visible"
+        android:orientation="vertical">
+
+        <!-- Título "Iniciar sesión" -->
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registro de Usuario"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:padding="16dp"
+            android:background="@color/color_boton_principal"
+            android:textColor="@color/blanco"
+            android:elevation="8dp"/>
+
+        <!-- Encabezado para Nombre -->
+        <TextView
+            android:id="@+id/textViewNameHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Campo de texto para Nombre -->
+        <EditText
+            android:id="@+id/editTextName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="text" />
+
+        <!-- Encabezado para Correo -->
+        <TextView
+            android:id="@+id/textViewEmailHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Correo"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Campo de texto para Correo -->
+
+        <!-- Encabezado para Fecha de Nacimiento -->
+        <EditText
+            android:id="@+id/editTextTextEmailAddress3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress" />
+
+        <TextView
+            android:id="@+id/textViewDOBHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha de Nacimiento"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Campo de texto para Fecha de Nacimiento -->
+
+        <!-- Encabezado para Teléfono -->
+        <EditText
+            android:id="@+id/editTextDate2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="date" />
+
+        <TextView
+            android:id="@+id/textViewPhoneHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Teléfono"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Campo de texto para Teléfono -->
+
+        <!-- Encabezado para Contraseña -->
+        <EditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="phone" />
+
+        <TextView
+            android:id="@+id/textViewPasswordHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contraseña"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"/>
+
+        <!-- Campo de texto para Contraseña -->
+
+        <EditText
+            android:id="@+id/editTextTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/buttonRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/color_boton_principal"
+            android:text="Registrar"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

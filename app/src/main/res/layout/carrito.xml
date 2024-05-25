@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:padding="6dp"
+        android:background="@color/color_principal"
+        android:elevation="8dp">
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/imageViewLogo"
+            android:layout_width="20dp"
+            android:layout_height="29dp"
+            android:layout_weight="1"
+            android:elevation="2dp"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic" />
+
+        <!-- Campo de búsqueda -->
+        <EditText
+            android:id="@+id/editTextSearch"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:background="@color/blanco"
+            android:hint="Buscar "
+            android:padding="16dp"
+            android:textColor="@color/black"
+            android:layout_width="0dp"/>
+
+        <!-- Logo de carrito de compras -->
+        <ImageView
+            android:id="@+id/imageViewCart"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitEnd"
+            android:src="@drawable/carrito"
+            android:elevation="2dp" />
+    </LinearLayout>
+
+    <!-- Título "Tus productos seleccionados" -->
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tus productos seleccionados"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_below="@id/layoutTop"
+        android:padding="16dp"/>
+
+    <!-- Producto 1 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/textViewTitle">
+
+        <!-- Imagen -->
+        <ImageView
+            android:id="@+id/imageViewProducto1"
+            android:layout_width="0dp"
+            android:layout_height="190dp"
+            android:layout_weight="0.35"
+            android:scaleType="fitStart"
+            android:src="@drawable/cp1" />
+
+        <!-- Nombre y Precio -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:orientation="vertical"
+            android:paddingStart="16dp">
+
+            <!-- Nombre -->
+            <TextView
+                android:id="@+id/textViewNombreProducto1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="Computador 1"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <!-- Precio -->
+            <TextView
+                android:id="@+id/textViewPrecioProducto1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:text="Precio: $1.11"
+                android:textSize="18sp"
+                android:textStyle="bold"/>"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
