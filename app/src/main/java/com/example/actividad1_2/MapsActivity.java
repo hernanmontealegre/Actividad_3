@@ -9,6 +9,7 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -30,7 +31,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private static final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
     private boolean locationPermissionGranted;
 
-    @Override
+    @Override//configura e inicializa el mapa con el fragmento-> activity_maps.xml
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
@@ -42,13 +43,13 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapFragment.getMapAsync(this);
     }
 
-    @Override
+    @Override //cuando el mapa está listo, llama los método para verificar
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         getLocationPermission();
     }
 
-    private void getLocationPermission() {
+    private void getLocationPermission() {// verifica si la aplaicaicón ya tiene permisos sino los solicita
         if (ContextCompat.checkSelfPermission(this.getApplicationContext(),
                 Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
@@ -62,7 +63,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
     }
 
-    @Override
+    @Override// dependiendo de respuesta, llama métodos para obetenr y actualizar la ubicación O mensaje de permisos denegados
     public void onRequestPermissionsResult(int requestCode,
                                            @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
@@ -74,11 +75,12 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 getDeviceLocation();
                 updateLocationUI();
             } else {
-                Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Permiso denegado", Toast.LENGTH_SHORT).show();
             }
         }
     }
-
+    //obtiene la última ubicación y la fija en el mapa
+    // Se solicita latitud y longitud para ver por el logcat
     private void getDeviceLocation() {
         try {
             if (locationPermissionGranted) {
@@ -91,10 +93,11 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                             if (lastKnownLocation != null) {
                                 LatLng currentLatLng = new LatLng(lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude());
                                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLatLng, DEFAULT_ZOOM));
-                                mMap.addMarker(new MarkerOptions().position(currentLatLng).title("YUSTED ESTÁ QUÍ"));
+                                mMap.addMarker(new MarkerOptions().position(currentLatLng).title("Usted está aquí"));
+                                Log.d("MapsActivity", "Lat: " + lastKnownLocation.getLatitude() + ", Lon: " + lastKnownLocation.getLongitude());
                             }
                         } else {
-                            Toast.makeText(MapsActivity.this, "Unable to get current location", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MapsActivity.this, "No es posible obtener ubicación. Inténtelo nuevamente más tarde", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

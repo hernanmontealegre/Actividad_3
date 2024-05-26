@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- Contenedor del Jugador -->
+    <!-- Información  del Jugador -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,7 +19,7 @@
             android:orientation="vertical"
             android:padding="8dp">
 
-            <!-- Nombre -->
+            <!-- Nombre jugador -->
             <TextView
                 android:id="@+id/textNombreJugador"
                 android:layout_width="match_parent"
@@ -28,7 +28,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <!-- Posición -->
+            <!-- Posición jugador-->
             <TextView
                 android:id="@+id/textPosicionJugador"
                 android:layout_width="match_parent"
@@ -37,7 +37,7 @@
                 android:textSize="16sp"
                 android:layout_marginTop="4dp"/>
 
-            <!-- Precio -->
+            <!-- Precio jugador-->
             <TextView
                 android:id="@+id/textPrecioJugador"
                 android:layout_width="match_parent"
@@ -46,7 +46,7 @@
                 android:textSize="16sp"
                 android:layout_marginTop="4dp"/>
 
-            <!-- CheckBox -->
+            <!-- Checkbox agreaga jugador a carrito -->
             <CheckBox
                 android:id="@+id/checkBoxProducto1"
                 android:layout_width="wrap_content"
@@ -55,7 +55,7 @@
                 android:layout_marginTop="8dp"/>
         </LinearLayout>
 
-        <!-- Línea Divisoria -->
+        <!-- Línea fin jugador -->
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"

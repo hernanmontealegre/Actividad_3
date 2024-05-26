@@ -33,7 +33,7 @@ public class RegistroActivity extends AppCompatActivity {
         passwordText = findViewById(R.id.password);
         btnRegistro = findViewById(R.id.btnRegistro);
 
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase = FirebaseDatabase.getInstance().getReference();//inicializa la referencia a firebase db
         btnRegistro.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -47,7 +47,7 @@ public class RegistroActivity extends AppCompatActivity {
                 mDatabase.child("usuarios").child(usuario.getId()).setValue(usuario);
                 Toast.makeText(RegistroActivity.this, "Usuario registrado correctamente", Toast.LENGTH_SHORT).show();
 
-                // Después del registro exitoso, dirigir al usuario a MainActivity
+                // Después del registro, se dirige nuevamente al MainActivity
                 Intent intent = new Intent(RegistroActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish(); // Finalizar RegistroActivity para evitar que el usuario regrese aquí al presionar el botón Atrás

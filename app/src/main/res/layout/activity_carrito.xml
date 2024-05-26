@@ -22,7 +22,7 @@
             android:layout_weight="1"
             android:elevation="2dp"
             android:scaleType="fitStart"
-            android:src="@drawable/ic" />
+            android:src="@drawable/ic2" />
 
         <!-- Campo de búsqueda -->
         <EditText

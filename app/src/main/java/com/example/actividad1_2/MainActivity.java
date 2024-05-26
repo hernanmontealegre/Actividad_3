@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Crear una lista de jugadores
+        // lista de jugadores antes de bd
         jugadores = new ArrayList<>();
         jugadores.add(new Jugador("Kylian Mbappé", "Delantero", "272 Millones de Euros"));
         jugadores.add(new Jugador("Jude Victor William Bellingham", "Centrocampista", "267 Millones de Euros"));
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         jugadores.add(new Jugador("Alisson Ramses Becker", "Arquero", "72 Millones de Euros"));
         jugadores.add(new Jugador("Ederson Santana de Moraes", "Arquero", "56 Millones de Euros"));
 
-        // Configurar RecyclerView
+        // RecyclerView-->
         RecyclerView recyclerViewProducts = findViewById(R.id.recyclerViewProducts);
         recyclerViewProducts.setLayoutManager(new LinearLayoutManager(this));
         Adaptador adapter = new Adaptador(this, jugadores);
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Botón para ver mapa
-        Button buttonMap = findViewById(R.id.buttonMap);
+        Button buttonMap = findViewById(R.id.btnMap);
         buttonMap.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, MapsActivity.class);
             startActivity(intent);

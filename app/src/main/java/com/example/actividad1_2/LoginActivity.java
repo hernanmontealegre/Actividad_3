@@ -37,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view){
                 String correo = correoText.getText().toString();
                 String password = passwordText.getText().toString();
-
+                //validamos usuariuo y contraseña no sean nulos
                 if (correo.isEmpty() || password.isEmpty()) {
                     Toast.makeText(LoginActivity.this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show();
                 } else {
@@ -48,15 +48,16 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void loginUser(String correo, String password) {
+        //buscamos el correo en el nodo usuarios ->campos correo ingresado
         mDatabase.child("usuarios").orderByChild("correo").equalTo(correo).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
                     for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
                         Usuario usuario = userSnapshot.getValue(Usuario.class);
-                        if (usuario != null && usuario.getPassword().equals(password)) {
+                        if (usuario.getPassword().equals(password)) {//valida contraseña
                             Toast.makeText(LoginActivity.this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();
-                            // Redirigir a la pantalla principal u otra actividad
+                            // Redirigir a la pantalla principal posteriormente se muestra la página del usuario
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             startActivity(intent);
                             finish();

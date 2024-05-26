@@ -19,12 +19,12 @@
         <!-- Logo -->
         <ImageView
             android:id="@+id/imageViewLogo"
-            android:layout_width="20dp"
+            android:layout_width="0dp"
             android:layout_height="29dp"
             android:layout_weight="1"
             android:elevation="2dp"
             android:scaleType="fitStart"
-            android:src="@drawable/ic" />
+            android:src="@drawable/ic2" />
 
         <!-- Campo de búsqueda -->
         <EditText
@@ -34,7 +34,7 @@
             android:background="@color/blanco"
             android:hint="Buscar "
             android:padding="16dp"
-            android:textColor="@color/black"
+            android:textColor="@color/cardview_dark_background"
             android:layout_width="0dp"/>
 
         <!-- Logo de carrito de compras -->
@@ -48,20 +48,31 @@
             android:elevation="2dp" />
     </LinearLayout>
 
-    <!-- Lista de productos -->
+    <!-- Botón de localización -->
+    <Button
+        android:id="@+id/btnMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutTop"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/color_boton_principal"
+        android:text="Ver Jugadores Cerca" />
 
-    <!-- Botón de login -->
-    <!--android:layout_width="match_parent"-->
+    <!-- Lista de jugadores -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewProducts"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/btnMap"
         android:layout_above="@id/btnRegistrarse"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="6dp"
         android:layout_marginBottom="-65dp"
         android:padding="30dp"
         tools:listitem="@layout/item_producto" />
 
+    <!-- Botón Iniciar sesión -->
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="387dp"
@@ -73,7 +84,7 @@
         android:backgroundTint="@color/color_boton_principal"
         android:text="Iniciar sesión" />
 
-<!-- Botón de registro -->
+    <!-- Botón de registro -->
     <Button
         android:id="@+id/btnRegistrarse"
         android:layout_width="387dp"
@@ -84,12 +95,4 @@
         android:layout_marginBottom="-3dp"
         android:backgroundTint="@color/color_boton_principal"
         android:text="Registrarse" />
-
-    <Button
-        android:id="@+id/buttonMap"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="16dp"
-        android:text="Ver Mapa" />
 </RelativeLayout>
