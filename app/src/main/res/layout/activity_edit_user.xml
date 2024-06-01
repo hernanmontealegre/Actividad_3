@@ -1,4 +1,71 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/layoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="6dp"
+        android:background="@color/color_principal"
+        android:elevation="8dp">
+
+        <ImageView
+            android:id="@+id/imageViewLogo"
+            android:layout_width="20dp"
+            android:layout_height="29dp"
+            android:layout_weight="1"
+            android:elevation="2dp"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic2" />
+
+        <EditText
+            android:id="@+id/editTextSearch"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:background="@color/blanco"
+            android:hint="Buscar "
+            android:padding="16dp"
+            android:textColor="@color/black"
+            android:layout_width="0dp"/>
+
+        <ImageView
+            android:id="@+id/imageViewCart"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:scaleType="fitEnd"
+            android:src="@drawable/carrito"
+            android:elevation="2dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutLoginCredentials"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutTop"
+        android:padding="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Actualizar Datos"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:padding="16dp"
+            android:background="@color/color_boton_principal"
+            android:textColor="@color/blanco"
+            android:elevation="8dp"/>
+
+
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -36,7 +103,12 @@
 
     <Button
         android:id="@+id/buttonSave"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/color_boton_principal"
         android:text="Guardar" />
-</LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
