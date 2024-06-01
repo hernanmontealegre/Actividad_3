@@ -95,4 +95,17 @@
         android:layout_marginBottom="-3dp"
         android:backgroundTint="@color/color_boton_principal"
         android:text="Registrarse" />
+
+    <!-- Botón para listar usuarios -->
+    <Button
+        android:id="@+id/btnListUsers"
+        android:layout_width="387dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btnRegistrarse"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/color_boton_principal"
+        android:text="Listar Usuarios" />
+
 </RelativeLayout>

@@ -43,6 +43,8 @@
             android:name=".MapsActivity"
             android:exported="true" />
 
+        <activity android:name=".ListUsersActivity"></activity> <!-- Añade esta línea -->
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAcDXu-S9aUwz2DMSIXOOEwHbgP4pQRoLM" />

@@ -73,5 +73,12 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, MapsActivity.class);
             startActivity(intent);
         });
+
+        // Botón para listar usuarios
+        Button buttonListUsers = findViewById(R.id.btnListUsers);
+        buttonListUsers.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ListUsersActivity.class);
+            startActivity(intent);
+        });
     }
 }
